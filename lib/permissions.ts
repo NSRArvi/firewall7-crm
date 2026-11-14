@@ -1,13 +1,13 @@
 export const CRM_MODULES = [
   { key: "dashboard", label: "Dashboard" },
-  { key: "leads", label: "Leads & Enquiries" },
+  { key: "leads", label: "Leads" },
   { key: "clients", label: "Clients" },
   { key: "services", label: "Services" },
   { key: "quotations", label: "Quotations" },
-  { key: "invoices", label: "Invoices & Payments" },
-  { key: "projects", label: "Projects & Tasks" },
-  { key: "reports", label: "Reports & Logs" },
-  { key: "team", label: "Team & Roles" },
+  { key: "invoices", label: "Invoices" },
+  { key: "projects", label: "Projects" },
+  { key: "reports", label: "Reports" },
+  { key: "team", label: "Team" },
 ] as const;
 
 export type CrmModule = (typeof CRM_MODULES)[number]["key"];
