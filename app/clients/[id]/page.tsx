@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { createClient } from "@/lib/supabase/server";
 import { ClientDetailPage } from "@/components/clients/client-detail-page";
 
@@ -28,5 +29,9 @@ export default async function ClientPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  return <ClientDetailPage clientId={id} />;
+  return (
+    <Suspense>
+      <ClientDetailPage clientId={id} />
+    </Suspense>
+  );
 }

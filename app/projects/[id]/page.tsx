@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { createClient } from "@/lib/supabase/server";
 import { ProjectDetailPage } from "@/components/projects/project-detail-page";
 
@@ -28,5 +29,9 @@ export default async function ProjectPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  return <ProjectDetailPage projectId={id} />;
+  return (
+    <Suspense>
+      <ProjectDetailPage projectId={id} />
+    </Suspense>
+  );
 }
