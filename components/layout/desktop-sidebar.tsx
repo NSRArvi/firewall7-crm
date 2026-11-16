@@ -23,7 +23,7 @@ export function DesktopSidebar({
   const pathname = usePathname();
 
   return (
-    <aside className="hidden md:flex liquid-glass rounded p-4 w-64 shrink-0 flex-col justify-between">
+    <aside className="hidden md:flex md:sticky md:top-5 md:h-[calc(100vh-2.5rem)] overflow-y-auto liquid-glass rounded p-4 w-64 shrink-0 flex-col justify-between">
       <div className="space-y-6">
         <div className="flex items-center gap-3 px-2 pt-1">
           <div className="h-9 w-9 rounded bg-gradient-to-br from-[#f97316] to-[#ea580c] flex items-center justify-center text-white font-bold shadow-md shadow-orange-500/20">
@@ -42,7 +42,10 @@ export function DesktopSidebar({
         <nav className="space-y-1">
           {items.map((item) => {
             const Icon = item.icon;
-            const isActive = pathname === item.href;
+            const isActive =
+              item.href === "/"
+                ? pathname === "/"
+                : pathname === item.href || pathname.startsWith(item.href + "/");
             return (
               <Link
                 key={item.href}

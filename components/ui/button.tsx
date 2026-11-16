@@ -12,7 +12,7 @@ const buttonVariants = cva(
         destructive:
           "bg-red-600 text-white hover:bg-red-700 shadow-md shadow-red-500/20",
         outline:
-          "liquid-glass-pill text-slate-700 dark:text-slate-200",
+          "border border-slate-300 dark:border-white/15 bg-white/80 dark:bg-slate-800/60 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200",
         ghost:
           "hover:bg-white/40 dark:hover:bg-white/10 text-slate-700 dark:text-slate-200",
       },
